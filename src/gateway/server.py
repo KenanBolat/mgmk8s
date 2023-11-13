@@ -15,7 +15,7 @@ server = Flask(__name__)
 #
 
 mongo_data = PyMongo(server, uri="mongodb://localhost:27017/data")
-mongo_netcdf = PyMongo(server, uri="mongodb://localhost:27017/netcdf")
+mongo_netcdf = PyMongo(server, uri="mongodb://localhost:27017/ncdf")
 mongo_png = PyMongo(server, uri="mongodb://localhost:27017/png")
 mongo_geotiff = PyMongo(server, uri="mongodb://localhost:27017/geo_tiff")
 
@@ -88,7 +88,7 @@ def download():
 
         try:
             out = fs_netcdf.get(ObjectId(fid_string))
-            return send_file(out, download_name=f"{fid_string}.nc")
+            return send_file(out, download_name=f"{fid_string}.mp3")
         except Exception as err:
             print(err)
             return "internal server error", 500

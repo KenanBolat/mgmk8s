@@ -1,10 +1,10 @@
 import pika, sys, os, time
-from send import email
+from send import send_email as email
 
 
 def main():
     # rabbitmq connection
-    connection = pika.BlockingConnection(pika.ConnectionParameters(host="rabbitmq"))
+    connection = pika.BlockingConnection(pika.URLParameters('amqp://guest:guest@localhost:5672/'))
     channel = connection.channel()
 
     def callback(ch, method, properties, body):

@@ -23,7 +23,7 @@ def start(message, fs_videos, fs_mp3s, channel):
 
     # save file to mongo
 
-    time.sleep(47)
+    time.sleep(120)
     f = open(r"/home/knn/Desktop/a.mp3", "rb")
     data = f.read()
     fid = fs_mp3s.put(data)
