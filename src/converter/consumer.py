@@ -5,7 +5,8 @@ from convert import to_mp3
 
 
 def main():
-    client = MongoClient("host.minikube.internal", 27017)
+    # client = MongoClient("host.minikube.internal", 27017)
+    client = MongoClient("localhost", 27017)
     db_videos = client.videos
     db_mp3s = client.mp3s
     db_data = client.data
